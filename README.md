@@ -88,5 +88,19 @@ Python 3.10.4
 > ⚠️ **Warning:** the python interpreter is 3.9.20 ... why?! And it is 3.10.4 from `poetry run` .... 
 
 
+The issues is: `poetry shell` and `poetry run` try to find a suitable python interpreter (probably they make some trick to find the installed one): 
+
+```bash
+(nix:nix-shell-env) nicola-macbook-m1:code nicolabrisotto$ poetry shell
+Spawning shell within /Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10
+nicola-macbook-m1:code nicolabrisotto$ . /Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/activate
+(code-py3.10) nicola-macbook-m1:code nicolabrisotto$ which python
+/Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/python
+(code-py3.10) nicola-macbook-m1:code nicolabrisotto$ which /Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/python
+/Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/python
+(code-py3.10) nicola-macbook-m1:code nicolabrisotto$ ls -la /Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/python
+lrwxr-xr-x 1 nicolabrisotto staff 65 Sep 29 15:03 /Users/nicolabrisotto/Library/Caches/pypoetry/virtualenvs/code-U7bNCHKE-py3.10/bin/python -> /Users/nicolabrisotto/.asdf/installs/python/3.10.4/bin/python3.10
+```
+
 
 
