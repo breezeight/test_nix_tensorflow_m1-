@@ -12,8 +12,6 @@ TEST
 - KO: nix develop .#devShells.aarch64-darwin.test
 
 ## Build
-nix build .#devShells.x86_64-darwin.test
-
-
-
-nix build .#devShells.aarch64-darwin.test
+Test:
+- nix build .#devShells.aarch64-darwin.default
+- KO: nix build .#devShells.aarch64-darwin.test
