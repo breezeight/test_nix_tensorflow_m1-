@@ -1,6 +1,9 @@
 {
-  perSystem = {pkgs, ...}: {
+  perSystem = {pkgs, config, ...}: {
     devShells.default = pkgs.mkShellNoCC {
+      inputsFrom = [
+	config.process-compose."dev".services.outputs.devShell
+      ];
       packages = with pkgs; [
         yarn
         pipenv
