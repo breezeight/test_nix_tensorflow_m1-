@@ -1,5 +1,6 @@
 # hello_tensorflow.py
 
+import setuptools
 import tensorflow as tf
 
 # Create two constant tensors
