@@ -13,7 +13,7 @@
         programs = {
           nixfmt.enable = true;
           deadnix.enable = true;
-          black.enale = true;
+          black.enable = true;
         };
       };
 
